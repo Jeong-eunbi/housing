@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400&display=swap');
+body *{
+  font-family: 'Noto Sans KR', sans-serif;
+}
+header{
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+}
+.top{
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.top .container-fluid{
+  
+  padding: 0;
+}
+.top .navbar-collapse{
+  margin-top: 0;
+  width: calc(100% - 60px) !important;
+}
+.navbar-default .navbar-nav > li > a{
+  padding: 0;
+  line-height: 60px;
+}
+.navbar-default .hright:hover ul.fullmenu{
+  display: block !important;  
+}
+.absolute{
+  position: absolute;
+  top:0;
+}
+.right{
+  right: 0;
+}
+header .hleft{
+  padding:0;
+  width: auto;
+}
+.navbar > .container-fluid .navbar-brand {
+  
+  margin: 0;
+  line-height: inherit;
+  padding: 0;
+}
+.absolute.right a{
+  font-size:12px;
+}
+header .hright{
+  padding:0;
+  width:91.6% !important;
+  margin-top:20px;
+}
+header .hright>ul{
+  padding: 0;
+  width: calc(100% - 60px);
+}
+header .hright>ul>li{
+  width:12.5%;
+  padding:0;
+  padding: 0;
+}
+header .hright>ul.nav>li+li::before{
+  content: "I";  
+  position: absolute;
+  left: 0;
+  top: 17px;
+}
+header .hright>ul>li a{
+  text-align:center;
+  font-size: 14px;
+}
+/* 풀메뉴 */
+header .hright>ul.fullmenu{
+  
+  background-color: #eee;
+  position: absolute;
+  top: 60px;
+  left: 0;
+}
+header .hright>ul.fullmenu>li{
+  float: left;
+  padding: 0 8px;
+}
+header .hright>ul.fullmenu>li h2{
+  
+  display: none;
+}
+header .hright>ul.fullmenu>li ul{
+  
+}
+header .hright>ul.fullmenu>li ul li{
+  
+}
+header .hright>ul.fullmenu>li ul li+li{
+  border-top:1px solid #ccc;
+}
+header .hright>ul.fullmenu>li ul li a{
+  line-height:3;
+  font-size:14px;
+  transform: scaleY(1.05);
+  display: block;
+  text-align: left;
+}
+
+
+/* 검색 */
+header .hright form{
+  width:60px;
+  padding: 0;
+  margin: 0;
+}
+header .hright form button{
+  background-image: url(http://www.yunsunghousing.co.kr/images/common/btn_header_search.png);
+  width: 60px;
+  height: 60px;
+  text-indent: -9999px;
+  padding: 0;
+}
+header .etcmenu{
+  top:-34px;
+  width: auto !important;
+}
+header .etcmenu li{
+  width:auto !important;
+}
+header h1{
+  
+  /*! width: auto; */
+  /*! height: auto !important; */
+  /*! padding: 0 !important; */
+  /*! margin: 0; */
+  /*! margin-left: 0 !important; */
+}
+header h1 a{
+  
+  background-image: url(http://www.yunsunghousing.co.kr/images/common/logo.gif);
+  width: 60px;
+  height: 60px;
+  display: block;
+  text-indent: -9999px;
+}
+
+
+/* 햄버거버튼 */
+.icon-bar{
+  transform-origin: 50% 50%;
+  transition:all 0.5s;
+}
+.ham1{
+  transform:translateY(7px) rotate(45deg);
+}
+.ham2{
+  transform:translateX(-9999px);
+
+}
+.ham3{
+  transform:translateY(-5px) rotate(-45deg);
+}

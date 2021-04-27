@@ -1,0 +1,117 @@
+/* 하단영역 */
+#footer{
+  
+}
+#footer .w1200{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+#footer .w1200 .banner{
+  
+}
+#footer .w1200 .banner ul{
+  
+}
+#footer .w1200 .banner ul li{
+  text-align: center;
+
+}
+#footer .w1200 .banner ul li+li::before{
+  content: "";
+  border-left: 1px solid;
+  height:20px;
+  float:left ;
+  margin-top:20px;
+  color:#ccc;
+  
+}
+#footer .w1200 .banner ul li a{
+  display: block;
+  padding: 0 10px;
+}
+#footer .w1200 .banner ul li a img{
+  margin: 0 auto;
+  max-width: 90%;
+}
+#footer .w1200 .banner span{
+  
+}
+#footer .w1200 .banner span a{
+  
+}
+#footer .w1200 .fnb h1{
+  float: left;
+  margin: 0;
+}
+#footer .w1200 .fnb h1 a{
+  background-image: url(http://www.yunsunghousing.co.kr/images/common/footer_logo.gif);
+  width: 60px;
+  height: 60px;
+  display: block;
+  text-indent: -9999px;
+}
+#footer .w1200 .fnb{
+  overflow: hidden;
+  margin: 20px 0 20px;
+}
+#footer .w1200 .fnb ul.enb{
+  float: left;
+  border: 1px solid #ccc;
+  width: calc(100% - 360px);
+  height: 60px;
+  padding-left: 20px;
+}
+#footer .w1200 .fnb ul.enb li{
+  display: inline-block;
+}
+#footer .w1200 .fnb ul.enb li+li::before{
+  content: "I";
+  margin-right: 4px;
+  color: #ccc;
+}
+#footer .w1200 .fnb ul.enb li a{
+  line-height: 60px;
+  display: inline-block;
+}
+#footer .w1200 .fnb ul.sns{
+  float: right;
+  overflow: hidden;
+}
+#footer .w1200 .fnb ul.sns li{
+  float: left;
+}
+#footer .w1200 .fnb ul.sns li a{
+  width: 60px;
+  height: 60px;
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -9999px;
+}
+#footer .w1200 .fnb ul.sns li:nth-child(1) a{
+  background-image: url(http://www.yunsunghousing.co.kr/images/common/footer_sns06.gif);
+}
+#footer .w1200 .fnb ul.sns li:nth-child(2) a{
+  background-image: url(http://www.yunsunghousing.co.kr/images/common/footer_sns01.gif);
+}
+#footer .w1200 .fnb ul.sns li:nth-child(3) a{
+  background-image: url(http://www.yunsunghousing.co.kr/images/common/footer_sns02.gif);
+}
+#footer .w1200 .fnb ul.sns li:nth-child(4) a{
+  background-image: url(http://www.yunsunghousing.co.kr/images/common/footer_sns03.gif);
+}
+#footer .w1200 .fnb ul.sns li:nth-child(5) a{
+  background-image: url(http://www.yunsunghousing.co.kr/images/common/footer_sns05.gif);
+}
+
+#footer .w1200 address{
+  margin: 0;
+}
+#footer .w1200 p{
+  line-height: 2;
+}
+
+

@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부트스트랩코딩작품.[윤성하우징]</title>
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="stylesheet" href="css/nanum/css2?family=Nanum+Gothic+Coding&display=swap">
+
+    <!-- reset.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css" />
+
+    <!-- normalize.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+
+    <!-- 제이쿼리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/title.css">
+    <link rel="stylesheet" href="css/response.css">
+
+    <!-- slick 타이틀 애니메이션 -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+
+          $('.fade0').slick({
+            autoplay: true,
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+          });
+
+        }
+      );
+    </script>
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          // 완공사례
+          $('.multiple-items').slick({
+            infinite: true,
+            slidesToShow: 5,
+            slidesToScroll: 3,
+            responsive: [
+              {
+                breakpoint: 1025,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true
+                }
+              },
+              {
+                breakpoint: 769,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+              // You can unslick at a given breakpoint now by adding:
+              // settings: "unslick"
+              // instead of a settings object
+            ]
+          });
+        }
+      );
+    </script>
+    <!-- 시공사례 -->
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+
+          var n;
+          var currentDiv; //추가
+          $(".detail>div").not(":nth-child(1)").addClass("hiddenDiv"); //추가
+
+          $("#work .list li a").click(
+            function(){
+              $(this).addClass("current");
+              $("#work .list li a").not(this).removeClass("current");
+              n=$(this).attr("data-n");
+              $(".detail>div:nth-child("+n+")").show().removeClass("hiddenDiv");//추가
+              currentDiv=$(".detail>div:nth-child("+n+")");//추가
+              $(currentDiv).siblings().addClass("hiddenDiv");//추가
+              return false;
+            }
+          );
+
+
+          //윤성뉴스 탭클릭
+
+          var m;
+          var k;
+          $("#news .detail>li").not("#news .detail>li:nth-child(1)").hide();
+          $("#news ul.list li:nth-child(1) a").addClass("active");
+          $("#news ul.list li a").click(
+            function(){
+              m=$(this).attr("data-m");
+              k=$(this).attr("data-k");
+
+              $(this).addClass("active");
+              $("#news .w1200>div:nth-child("+k+") ul.list li a").not(this).removeClass("active");
+
+              $("#news .w1200>div:nth-child("+k+") .detail>li:nth-child("+m+")").addClass("show");
+              $("#news .w1200>div:nth-child("+k+") .detail>li").not("#news .w1200>div:nth-child("+k+") .detail>li:nth-child("+m+")").hide().removeClass("show");
+              return false;
+            }
+          );
+
+          //고객센타 탭클릭
+          var g;
+          var d;
+          $("#customer .gesipan ul.list li a").click(
+            function(){
+              g=$(this).attr("data-gesi");
+              d=$(this).attr("data-d");
+              $("#customer .gesipan:nth-child("+g+") ul.detail:nth-of-type("+d+")").show();
+              $("#customer .gesipan:nth-child("+g+") ul.detail").not("ul.detail:nth-of-type("+d+")").hide();
+              return false;
+
+            }
+          );
+
+
+        }
+      );
+    </script>
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          // 건축주 스토리
+
+          $('.center').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 9,
+            speed:500,
+            responsive: [
+              {
+                breakpoint: 1025,
+                settings: {
+                  arrows: true,
+                  centerMode: true,
+                  centerPadding: '40px',
+                  slidesToShow: 5
+                }
+              },
+              {
+                breakpoint: 769,
+                settings: {
+                  arrows: true,
+                  centerMode: true,
+                  centerPadding: '40px',
+                  slidesToShow: 3
+                }
+              }
+            ]
+          });
+
+          var sh=$("body #story > ul.center li.slist").width();
+          $("#story > ul.center li.slist").css("height",sh);
+
+          $(window).resize( //창사이즈를 조절하면 실행하시오
+            function(){
+              sh=$("#story > ul.center li.slist").width();
+              $("#story > ul.center li.slist").css("height",sh+"px !important");
+            }
+          );
+
+
+        }
+      );
+    </script>
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+
+        }
+      );
+    </script>
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+          $('.autoplay').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000
+          });
+        }
+      );
+    </script>
+    <!-- 배너 -->
+    <script type="text/javascript">
+      $(document).ready(
+        function(){
+
+          $('.bannerautoplay').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            responsive: [
+              {
+                breakpoint: 1025,
+                settings: {
+                  arrows: true,
+                  centerMode: true,
+                  centerPadding: '40px',
+                  slidesToShow: 3
+                }
+              },
+              {
+                breakpoint: 769,
+                settings: {
+                  arrows: true,
+                  centerMode: true,
+                  centerPadding: '0px',
+                  slidesToShow: 1
+                }
+              }
+            ]
+          });
+
+        }
+      );
+    </script>
+    <script type="text/javascript">
+      //건축상담 클릭
+      $(document).ready(
+        function(){
+          $("#counsel span").click(
+            function(){
+              $("#counsel").toggleClass("counselmove");
+            }
+          );
+      //스크롤시 건축상담이 안으로 들어가도록
+      $(window).scroll(
+        function(){
+          if($(window).scrollTop()>80){
+            $("#counsel").addClass("counselmove");
+          }
+          if($(window).scrollTop()<80){
+            $("#counsel").removeClass("counselmove");
+          }
+
+        }
+      );
+      //TOP버튼 클릭시 위로
+      $("a.top").click(
+        function(){
+          $("html,body").animate({scrollTop:"0px"},1000);
+          return false;
+          //animate({속성:값},초);
+            }
+          );
+        }
+      );
+    </script>
+  </head>
+  <body>
+<!-- 상단 영역 -->
+    <header class="container-fluid">
+      <div class="top navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header col-md-1 hleft">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <h1 class="navbar-brand"><a href="index.html">윤성하우징</a></h1>
+          </div>
+          <nav class="collapse navbar-collapse col-md-11 hright" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav col-md-11">
+              <li class="col-md-1"><a href="company-introduce.html">회사 소개</a></li>
+              <li class="col-md-1"><a href="">특별한 윤성</a></li>
+              <li class="col-md-1"><a href="">하우징 스타일</a></li>
+              <li class="col-md-1"><a href="">시그니쳐 H</a></li>
+              <li class="col-md-1"><a href="">윤성 갤러리</a></li>
+              <li class="col-md-1"><a href="">건축가이드</a></li>
+              <li class="col-md-1"><a href="">커뮤니티</a></li>
+              <li class="col-md-1"><a href="">온라인 상담 신청</a></li>
+            </ul>
+            <form class="navbar-form navbar-left col-md-1" role="search">
+              <div class="form-group hide">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="hide fullmenu">
+              <li>
+                <h2>회사 소개</h2>
+                <ul>
+                  <li><a href="company-introduce.html#greeting" target="_blank">인사말</a></li>
+                  <li><a href="company-introduce.html#vision">브랜드소개</a></li>
+                  <li><a href="company-introduce.html#organization">윤성이 걸어온 길</a></li>
+                  <li><a href="">윤성의 사회공헌</a></li>
+                  <li><a href="">조직도</a></li>
+                  <li><a href="">인재채용</a></li>
+                  <li><a href="">전시장소개</a></li>
+                </ul>
+              </li>
+              <li>
+                <h2>특별한 윤성</h2>
+                <ul>
+                  <li><a href="">특별한 이유</a></li>
+                  <li><a href="">원스토리시스템</a></li>
+                  <li><a href="">맞춤 컨설팅 서비스</a></li>
+                  <li><a href="">홈플랜 서비스</a></li>
+                  <li><a href="">현장관리 서비스</a></li>
+                  <li><a href="">사후관리 서비스</a></li>
+                </ul>
+              <li>
+                <h2>하우징 스타일</h2>
+                <ul>
+                  <li><a href="">하우징 스타일</a></li>
+                  <li><a href="">내추럴</a></li>
+                  <li><a href="">모던</a></li>
+                  <li><a href="">지중해</a></li>
+                  <li><a href="">플래티늄</a></li>
+                </ul>
+              </li>
+              <li>
+                <h2>시그니쳐 H</h2>
+                <ul>
+                  <li><a href="">시그니쳐 H</a></li>
+                  <li><a href="">N 스타일</a></li>
+                  <li><a href="">J 스타일</a></li>
+                  <li><a href="">M 스타일</a></li>
+                </ul>
+              </li>
+              <li>
+                <h2>윤성 갤러리</h2>
+                <ul>
+                  <li><a href="">완공사례</a></li>
+                  <li><a href="">설계사례</a></li>
+                </ul>
+              </li>
+              <li>
+                <h2>건축가이드</h2>
+                <ul>
+                  <li><a href="">공정별 시공절차</a></li>
+                  <li><a href="">건축정보</a></li>
+                  <li><a href="">톡톡 인테리어 Tip</a></li>
+                  <li><a href="">윤성웹툰</a></li>
+                  <li><a href="">자주묻는 질문</a></li>
+                </ul>
+              </li>
+              <li>
+                <h2>커뮤니티</h2>
+                <ul>
+                  <li><a href="">윤성소식</a></li>
+                  <li><a href="">홍보센터</a></li>
+                  <li><a href="">건축주 스토리</a></li>
+                  <li><a href="">매니저 스토리</a></li>
+                  <li><a href="">사후관리현장</a></li>
+                </ul>
+              </li>
+              <li>
+                <h2>온라인 상담 신청</h2>
+                <ul>
+                  <li><a href="">건축상담</a></li>
+                  <li><a href="">현장답사요청</a></li>
+                  <li><a href="">전시장 방문신청</a></li>
+                  <li><a href="">가이드북 신청</a></li>
+                  <li><a href="">A/S 신청</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="absolute right list-inline etcmenu">
+              <li><a href="">로그인</a></li>
+              <li><a href="">회원가입</a></li>
+              <li><a href="">CONTACT US</a></li>
+              <li><a href="">채용정보</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+<!-- 타이틀 영역 -->
+    <div id="title">
+      <!-- (ul[class="list"]>li*5>h2+h3+p+a)+ul[class="control"]>li*5>a -->
+      <ul class="list fade0">
+        <li class="t1 tlist">
+          <h2>윤성하우징 <span>가치에 디자인을 더하다</span></h2>
+          <h3>경향하우징페어 참가 2020.11.26<i>목</i> - 11.29<i>일</i></h3>
+          <p>대치동 학여울역 SRTEC 3전시관</p>
+          <a href="#">무료티켓 신청하기</a>
+        </li>
+        <li class="t2 tlist">
+          <h2>윤성하우징 <span>가치에 디자인을 더하다</span></h2>
+          <h3><strong>탁재훈 출연!</strong> 고려주조 원탁 막걸리 CF장소협찬</h3>
+          <a href="">자세히보기</a>
+        </li>
+        <li class="t3 tlist">
+          <h2>마음이 트이는 빨간벽돌 집</h2>
+          <h3>Natural Style House</h3>
+          <p>case By 화성 송산 그린시티</p>
+        </li>
+      </ul>
+
+    </div>
+<!-- 컨텐츠 영역 -->
+    <div id="section">
+      <aside id="counsel">
+        <h2>빠른 건축상담</h2>
+        <form class="form-group">
+          <!-- 부트스트랩에서 원하는 효과의 클래스를 가져다가 그냥 붙여넣으면 됨 -->
+          <input type="text"  class="form-control">
+          <input type="text"  class="form-control">
+          <input type="checkbox">
+          <label for="">개인정보취급방침</label>
+          <a href="">자세히 보기</a>
+          <button  class="btn btn-danger">신청하기</button>
+        </form>
+        <h2>고객상담센터</h2>
+        <p>1566-0495</p>
+        <a href="" class="top">top</a>
+        <span class="glyphicon glyphicon-play"></span>
+      </aside>
+      <!-- div[id="work"]>div[class="w1200"]>h2[class="hide"]+(ul[class="list"]>li*4>a[href="#"])+div[class="detal"]>div*4>h3+ul>li*5>(a>img)+h4+p -->
+      <div id="work">
+        <div class="w1200">
+          <h2 class="hide">제작사례</h2>
+          <ul class="list">
+            <li><a href="#" data-n="1">완공사례</a></li>
+            <li><a href="#" data-n="2">설계사례</a></li>
+            <li><a href="#" data-n="3">톡톡 인테리어</a></li>
+            <li><a href="#" data-n="4">사후관리현장</a></li>
+          </ul>
+          <div class="detail">
+            <div>
+              <h3 class="hide">완공사례</h3>
+              <ul class="multiple-items">
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_fc5396088.jpg" alt=""></a>
+                  <h4>모델하우스 [테라스]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_fc5396088.jpg" alt=""></a>
+                  <h4>모델하우스 [테라스]</h4>
+                  <p></p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_fc5396088.jpg" alt=""></a>
+                  <h4>모델하우스 [테라스]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_fc5396088.jpg" alt=""></a>
+                  <h4>모델하우스 [테라스]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_fc5396088.jpg" alt=""></a>
+                  <h4>모델하우스 [테라스]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_fc5396088.jpg" alt=""></a>
+                  <h4>모델하우스 [테라스]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_fc5396088.jpg" alt=""></a>
+                  <h4>모델하우스 [테라스]</h4>
+                  <p></p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_fc5396088.jpg" alt=""></a>
+                  <h4>모델하우스 [테라스]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_fc5396088.jpg" alt=""></a>
+                  <h4>모델하우스 [테라스]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_fc5396088.jpg" alt=""></a>
+                  <h4>모델하우스 [테라스]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="hide">설계사례</h3>
+              <ul class="multiple-items">
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_f0c8daeb5.jpg" alt=""></a>
+                  <h4>모델하우스 [사랑채]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_f0c8daeb5.jpg" alt=""></a>
+                  <h4>모델하우스 [사랑채]</h4>
+                  <p></p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_f0c8daeb5.jpg" alt=""></a>
+                  <h4>모델하우스 [사랑채]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_f0c8daeb5.jpg" alt=""></a>
+                  <h4>모델하우스 [사랑채]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_f0c8daeb5.jpg" alt=""></a>
+                  <h4>모델하우스 [사랑채]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="hide">톡톡 인테리어</h3>
+              <ul  class="multiple-items">
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_f191cc5c4.jpg" alt=""></a>
+                  <h4>모델하우스 [안마당]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_f191cc5c4.jpg" alt=""></a>
+                  <h4>모델하우스 [안마당]</h4>
+                  <p></p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_f191cc5c4.jpg" alt=""></a>
+                  <h4>모델하우스 [안마당]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_f191cc5c4.jpg" alt=""></a>
+                  <h4>모델하우스 [안마당]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_f191cc5c4.jpg" alt=""></a>
+                  <h4>모델하우스 [안마당]</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="hide">사후관리현장</h3>
+              <ul class="multiple-items">
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_ff80148d1.jpg" alt=""></a>
+                  <h4>제주 애월읍 주택</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_ff80148d1.jpg" alt=""></a>
+                  <h4>제주 애월읍 주택</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_ff80148d1.jpg" alt=""></a>
+                  <h4>제주 애월읍 주택</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_ff80148d1.jpg" alt=""></a>
+                  <h4>제주 애월읍 주택</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+                <li>
+                  <a href=""><img src="http://www.yunsunghousing.co.kr/FileData/banner3/simg/main_ff80148d1.jpg" alt=""></a>
+                  <h4>제주 애월읍 주택</h4>
+                  <p>[시그니처] 273.18㎡(82.63py)</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 스토리 -->
+      <!-- div[id="story"]>h2+p+(ul>li*9>a)+span>a*2 -->
+      <div id="story">
+        <h2>건축주 스토리</h2>
+        <p>윤성하우징과 함께 해주신 고객님들의 스토리입니다.<br>
+         왜 윤성하우징이어야만 하는지 확인해보세요! </p>
+        <ul class="center">
+          <li class="slist s1"><a href=""><span>첫번째<br>이야기</span></a></li>
+          <li class="slist s2"><a href=""><span>두번째<br>이야기</span></a></li>
+          <li class="slist s3"><a href=""><span>세번째<br>이야기</span></a></li>
+          <li class="slist s4"><a href=""><span>네번째<br>이야기</span></a></li>
+          <li class="slist s5"><a href=""><span>다섯번째<br>이야기</span></a></li>
+          <li class="slist s6"><a href=""><span>여섯번째<br>이야기</span></a></li>
+          <li class="slist s7"><a href=""><span>일곱번째<br>이야기</span></a></li>
+          <li class="slist s8"><a href=""><span>여덟번째<br>이야기</span></a></li>
+          <li class="slist s9"><a href=""><span>아홉번째<br>이야기</span></a></li>
+          <li class="slist s10"><a href=""><span>열번째<br>이야기</span></a></li>
+          <li class="slist s11"><a href=""><span>열한번째<br>이야기</span></a></li>
+        </ul>
+      </div>
+      <!-- 윤성소식 -->
+      <div id="news">
+        <div class="w1200">
+          <div class="yunsungnews">
+            <h3>윤성소식</h3>
+            <ul class="list">
+              <li><a href="" data-k="1" data-m="1">윤성뉴스</a></li>
+              <li><a href="" data-k="1" data-m="2">프로모션</a></li>
+              <li><a href="" data-k="1" data-m="3">뉴스레터</a></li>
+            </ul>
+            <ul class="detail">
+              <li class="show">
+                <img src="http://www.yunsunghousing.co.kr/FileData/notice/simg/main_f007fb175.jpg" alt="">
+                <ul>
+                  <li><a href="">윤성하우징, 송산그린시티 단독주택 착공식!(0)</a></li>
+                  <li><a href="">[건축박람회] 윤성하우징, 2020 서울경향하우징...(10)</a></li>
+                  <li><a href="">윤성하우징, 탁재훈 출연! 원탁막걸리 CF 장...(0)</a></li>
+                  <li><a href="">윤성하우징, 용인시 신봉동 단독주택 착공...(0)</a></li>
+                </ul>
+              </li>
+              <li class="hide">
+                <img src="http://www.yunsunghousing.co.kr/FileData/notice/simg/main_fcc807853.jpg" alt="">
+                <ul>
+                  <li><a href="">[프로모션] 설문조사 베스킨라빈스 이벤트 당첨자 안내 (0)</a></li>
+                  <li><a href="">[프로모션] 설문조사 참여하고 베스킨라빈스 아...(0)</a></li>
+                  <li><a href="">[프로모션] 건축상담 던킨도넛+아메리카노Set ...(0)</a></li>
+                  <li><a href="">[프로모션] 건축상담 받고 아메리카노&던킨도...(2)</a></li>
+                </ul>
+              </li>
+              <li class="hide">
+                <img src="http://www.yunsunghousing.co.kr/FileData/notice/simg/main_f662ef1e6.jpg" alt="">
+                <ul>
+                  <li><a href="">[정기웹진] 2020년 11월(0)</a></li>
+                  <li><a href="">[정기웹진] 2020년 10월(0)</a></li>
+                  <li><a href="">[정기웹진] 2020년 9월(0)</a></li>
+                  <li><a href="">[정기웹진] 2020년 8월(0)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="hongbo">
+            <h3>홍보센터</h3>
+            <ul class="list">
+              <li><a href="" data-k="2" data-m="1">미디어</a></li>
+              <li><a href="" data-k="2" data-m="2">박람회</a></li>
+              <li><a href="" data-k="2" data-m="3">홍보영상</a></li>
+            </ul>
+            <ul class="detail">
+              <li class="show">
+                <img src="http://www.yunsunghousing.co.kr/FileData/media/simg/main_fd9d2a96c.jpg" alt="">
+                <ul>
+                  <li><a href="">[한국경제] 윤성하우징, 송산그린시티 단독주택 모델하우스 ‘안마당` 오픈(0)</a></li>
+                  <li><a href="">[서울경제] 윤성하우징, 창업 후 28년 간 무차...(0)</a></li>
+                  <li><a href="">[G밸리뉴스] 윤성하우징, 송산그린시티 단독주...(0)</a></li>
+                  <li><a href="">[조선비즈] 윤성하우징, 송산그린시티 단독주택...(0)</a></li>
+                </ul>
+              </li>
+              <li class="hide">
+                <img src="http://www.yunsunghousing.co.kr/FileData/media/simg/main_f6f028939.jpg" alt="">
+                <ul>
+                  <li><a href="">[현장스케치] 제 52회 MBC건축박람회(0)</a></li>
+                  <li><a href="">[현장스케치] 2019 서울 경향하우징페어(0)</a></li>
+                  <li><a href="">[현장스케치] 제 51회 MBC건축박람회(0)</a></li>
+                  <li><a href="">[현장스케치] 제 50회 MBC건축박람회(0)</a></li>
+                </ul>
+              </li>
+              <li class="hide">
+                <img src="http://www.yunsunghousing.co.kr/FileData/media/simg/main_fac56fa34.jpg" alt="">
+                <ul>
+                  <li><a href="">[항공촬영] 경남 남해 용소리 주택_ Mediterranean Style(0)</a></li>
+                  <li><a href="">[항공촬영] 전남 여수 돌산읍 평사리 주...(0)</a></li>
+                  <li><a href="">[동아닷컴 더 하우스] 양평 대심리 편 (0)</a></li>
+                  <li><a href="">[SBS생방송투데이] 사람의 집 _ 경기 광주 오...(0)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="homestyle">
+            <h3>홈스타일</h3>
+            <ul class="list">
+              <li><a href="" data-k="3" data-m="1">BEST 설계사례</a></li>
+              <li><a href="" data-k="3" data-m="2">톡톡 인테리어</a></li>
+            </ul>
+            <ul class="detail">
+              <li class="show">
+                <img src="http://www.yunsunghousing.co.kr/FileData/interia/simg/main_f57fc5f7b.jpg" alt="">
+                <ul>
+                  <li><a href="">Signature H: 테라스 모델 [Modern Style...(0)</a></li>
+                  <li><a href="">파주 문발동 주택 [Natural Style] N75-...(0)</a></li>
+                  <li><a href="">문경 서중리 주택 [Natural Style](0)</a></li>
+                  <li><a href="">M style Ⅳ - 철근 콘크리트 모델(0)</a></li>
+                </ul>
+              </li>
+              <li class="hide">
+                <img src="http://www.yunsunghousing.co.kr/FileData/interia/simg/main_f57fc5f7b.jpg" alt="">
+                <ul>
+                  <li><a href="">톡톡 인테리어 Tip [Sub kitchen: 보조주...(0)</a></li>
+                  <li><a href="">톡톡 인테리어 Tip [PawderRoom: 파우더룸...(0)</a></li>
+                  <li><a href="">톡톡 인테리어 Tip [Bathroom: 욕실](0)</a></li>
+                  <li><a href="">톡톡 인테리어 Tip [Kids Zone: 키즈존](0)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="service">
+            <ul class="man autoplay">
+              <li class="manlist">
+                <h2>전문하우징매니저의 <br>건축컨시어지 서비스</h2>
+                <p>소중하게 맺은 인연,<br>책임으로 보답하겠습니다.</p>
+                <p>유욱상<span>고객지원부 팀장</span></p>
+              </li>
+              <li class="manlist">
+                <h2>전문하우징매니저의 <br>건축컨시어지 서비스</h2>
+                <p>어렵게만 생각되는 집짓기,<br>윤성의 하우징매니저를<br>만나면 쉬워집니다.</p>
+                <p>박정배<span>하우징매니저</span></p>
+              </li>
+              <li class="manlist">
+                <h2>전문하우징매니저의 <br>건축컨시어지 서비스</h2>
+                <p>건축주님의 집이 아닌<br>항상 내 집을 짓는다는<br>생각으로 임합니다.</p>
+                <p>윤형근<span>하우징매니저</span></p>
+              </li>
+            </ul>
+            <ul class="story">
+              <li>
+                <h3>컨설팅 스토리</h3>
+                <ul>
+                  <li><a>[유욱상] 충남 아산 P건축주님 시공계약(0)</a></li>
+                  <li><a>[박정배]경기 하남 U건축주님 시공계약(0)</a></li>
+                  <li><a>[박정배]충북 음성 N건축주님 시공계약(0)</a></li>
+                </ul>
+              </li>
+              <li>
+                <h3>매니저 스토리</h3>
+                <ul class="hide">
+                  <li><a>[박정배] 시간과 자리(0)</a></li>
+                  <li><a>[박정배] 온천에서 즐기는 물놀이(0)</a></li>
+                  <li><a>[박정배] 세종 S건축주님의 선물(1)</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- 내추럴 -->
+      <div id="natural">
+        <div class="w1200">
+          <h2 class="hide">소개</h2>
+          <div class="left">
+            <ul>
+              <li>
+                <a href="">
+                  <h3>내추럴</h3>
+                  <p>어떤환경에 놓이더라도 주변경관</p>
+                  <img src="img/h1.png" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <h3>모던</h3>
+                  <p>직선의 매력을 살려 디자인된</p>
+                  <img src="img/h2.png" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <h3>지중해</h3>
+                  <p>유럽의 프로방스를 옮겨놓은 듯한</p>
+                  <img src="img/h3.png" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <h3>플래티늄</h3>
+                  <p>윤성만의 개성이 녹아든 설계스타일</p>
+                  <img src="img/h4.png" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="right">
+            <div class="reserv">
+              <a href="">
+                <h3>28년,신뢰와 기술<span>윤성하우징</span></h3>
+                <p>모델하우스 예약 1566-0495</p>
+              </a>
+            </div>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/iywtHxwipeE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!-- 고객센타 -->
+      <!-- div[id="customer"]>div[class="w1200"]>(div*2>(ul[class="list"]>li*2>a)+h3+ul[class="detail"]>li*6>a>time)+ul>li*5>a -->
+      <div id="customer">
+        <div class="w1200">
+          <div class="gesipan">
+            <ul class="list">
+              <li><a href="" data-gesi="1" data-d="2">온라인상담신청</a></li>
+              <li><a href="" data-gesi="1" data-d="3">가이드북신청</a></li>
+            </ul>
+            <h3>온라인상담신청</h3>
+            <ul class="detail">
+              <li>
+                <a href="">건축상담(0)
+                  <time>12-08</time>
+                </a>
+              </li>
+              <li>
+                <a href=""> 송산 그린시타의 안마당을 잘 보았...(1)
+                  <time>12-07</time>
+                </a>
+              </li>
+              <li>
+                <a href="">현재 건축 상담중에 있습니다.(1)
+                  <time>12-06</time>
+                </a>
+              </li>
+              <li>
+                <a href="">욕심을 버리고 짓고 싶네요(1)
+                  <time>12-05</time>
+                </a>
+              </li>
+              <li>
+                <a href="">화성 견본주택(1)
+                  <time>12-05</time>
+                </a>
+              </li>
+              <li>
+                <a href="">송산그린시티 단독주택 모델하우스 ...(1)
+                  <time>12-05</time>
+                </a>
+              </li>
+            </ul>
+            <h3>가이드북신청</h3>
+            <ul class="detail">
+              <li>
+                <a href="">가이드북 신청(1)
+                  <time>12-08</time>
+                </a>
+              </li>
+              <li>
+                <a href="">세종시 송산그란시티 안마당 ...(1)
+                  <time>12-07</time>
+                </a>
+              </li>
+              <li>
+                <a href="">전원주택 문의차, 가이드북 신청...(1)
+                  <time>12-07</time>
+                </a>
+              </li>
+              <li>
+                <a href="">가이드북 신청드립니다(1)
+                  <time>12-07</time>
+                </a>
+              </li>
+              <li>
+                <a href="">건축비용(1)
+                  <time>12-06</time>
+                </a>
+              </li>
+              <li>
+                <a href=""> 가이드북 신청(1)
+                  <time>12-05</time>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="gesipan">
+            <ul class="list">
+              <li><a href="" data-gesi="2" data-d="2">최근게시글</a></li>
+              <li><a href="" data-gesi="2" data-d="3">최근댓글</a></li>
+            </ul>
+            <h3>최근게시글</h3>
+            <ul class="detail">
+              <li>
+                <a href="">건축상담(0)
+                  <time>12-08</time>
+                </a>
+              </li>
+              <li>
+                <a href="">가이드북 신청(1)
+                  <time>12-08</time>
+                </a>
+              </li>
+              <li>
+                <a href="">송산 그린시타의 안마당을 잘 보았...(1)
+                  <time>12-07</time>
+                </a>
+              </li>
+              <li>
+                <a href="">세종시 송산그린시티 안마당 ...(1)
+                  <time>12-07</time>
+                </a>
+              </li>
+              <li>
+                <a href="">전원주택 문의차, 가이드북 신청...(1)
+                  <time>12-07</time>
+                </a>
+              </li>
+              <li>
+                <a href=""> 가이드북 신청드립니다(1)
+                  <time>12-07</time>
+                </a>
+              </li>
+            </ul>
+            <h3>최근댓글</h3>
+            <ul class="detail">
+              <li>
+                <a href="">All 바른 생각으로 All 바른 공간을...
+                  <time>12-08</time>
+                </a>
+              </li>
+              <li>
+                <a href="">All 바른 생각으로 All 바른 공간을...
+                  <time>12-07</time>
+                </a>
+              </li>
+              <li>
+                <a href="">All 바른 생각으로 All 바른 공간을...
+                  <time>12-07</time>
+                </a>
+              </li>
+              <li>
+                <a href="">All 바른 생각으로 All 바른 공간을...
+                  <time>12-07</time>
+                </a>
+              </li>
+              <li>
+                <a href="">All 바른 생각으로 All 바른 공간을...
+                  <time>12-07</time>
+                </a>
+              </li>
+              <li>
+                <a href="">All 바른 생각으로 All 바른 공간을...
+                  <time>12-06</time>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <ul class="apply">
+            <li><a href="">가이드북 무료신청</a></li>
+            <li><a href="">고객상담센터 1566 - 0495</a></li>
+            <li><a href="">건축상담 신청</a></li>
+            <li><a href="">A/S 신청</a></li>
+            <li><a href="">카카오톡에서 <strong>@윤성하우징</strong>을<br>
+            <span>친구추가 하세요</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+      <!-- 마지막div는 섹션용 큰 div -->
+
+    <!-- 하단 영역 -->
+    <div id="footer">
+      <div class="w1200">
+        <div class="banner">
+          <ul class="bannerautoplay">
+            <li><a href=""><img src="img/relation_logo01.gif" alt=""></a></li>
+            <li><a href=""><img src="img/relation_logo02.gif" alt=""></a></li>
+            <li><a href=""><img src="img/relation_logo03.gif" alt=""></a></li>
+            <li><a href=""><img src="img/relation_logo04.gif" alt=""></a></li>
+            <li><a href=""><img src="img/relation_logo05.gif" alt=""></a></li>
+            <li><a href=""><img src="img/relation_logo06.gif" alt=""></a></li>
+            <li><a href=""><img src="img/relation_logo07.gif" alt=""></a></li>
+            <li><a href=""><img src="img/relation_logo08.gif" alt=""></a></li>
+            <li><a href=""><img src="img/relation_logo09.gif" alt=""></a></li>
+            <li><a href=""><img src="img/relation_logo10.gif" alt=""></a></li>
+          </ul>
+        </div>
+        <div class="fnb">
+          <h1><a href="">윤성하우징</a></h1>
+          <ul class="enb">
+            <li><a href="">개인정보취급방침</a></li>
+            <li><a href="">회원약관</a></li>
+            <li><a href="">회사소개</a></li>
+            <li><a href="">채용정보</a></li>
+          </ul>
+          <ul class="sns">
+            <li><a href="">네이버tv</a></li>
+            <li><a href="">카카오스토리</a></li>
+            <li><a href="">페이스북</a></li>
+            <li><a href="">네이버블로그</a></li>
+            <li><a href="">유투브</a></li>
+          </ul>
+        </div>
+        <address>주)윤성하우징 : 경기도 안산시 상록구 건건 4길 52-10번지 상담전화 : 1566-0495<br>사업자 등록번호 : 134-87-01322  |  대표이사 : 윤용식  |  개인정보책임자 : 유인천  |  FAX : 031-437-3375</address>
+        <p>Copyright (C) 1992-2014 yunsunghousing family. all right reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>
